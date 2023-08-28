@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Add new lesson</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body class="w3-light-grey">
+<div>
+    <a th:href="@{'?locale=ru'}">RU</a>
+    <a th:href="@{'?locale=en'}">EN</a>
+</div>
+<div class="w3-container w3-blue-grey w3-opacity w3-right-align">
+    <h1 th:text="#{lesson.heading}"></h1>
+</div>
+
+<div class="w3-container w3-padding">
+
+    <div class="w3-card-4">
+        <div class="w3-container w3-center w3-green">
+            <h2 th:text="#{lesson.addButton}"></h2>
+        </div>
+
+        <form th:action="@{/add}"
+              th:object="${lessonForm}" method="POST" class="w3-selection w3-light-grey w3-padding">
+
+            <label><h0 th:text="#{lesson.title}"></h0>
+                <input type="text" th:field="*{title}" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"/><br/>
+            </label>
+            <label><h0 th:text="#{lesson.time}"></h0>
+                <input type="text" th:field="*{time}" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"/>
+                <br/>
+            </label>
+            <label><h0 th:text="#{lesson.teacher}"></h0>
+                <input type="text" th:field="*{teacher}" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"/>
+                <br/>
+            </label>
+            <input type="submit" th:value="#{lesson.create}" class="w3-btn w3-green w3-round-large w3-margin-bottom" />
+        </form>
+    </div>
+</div>
+
+<div class="w3-container w3-grey w3-opacity w3-right-align w3-padding">
+    <input type="submit"  th:value="#{lesson.back}" class="w3-btn w3-round-large" onclick="location.href='/'"/>
+</div>
+
+</body>
+</html>

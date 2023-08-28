@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Schedule of classes</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body class="w3-light-grey">
+<div>
+    <a th:href="@{'?locale=ru'}">RU</a>
+    <a th:href="@{'?locale=en'}">EN</a>
+</div>
+<div class="w3-container w3-blue-grey w3-opacity w3-right-align">
+    <h1 th:text="#{lesson.heading}"></h1>
+</div>
+
+<div class="w3-container w3-center">
+    <div class="w3-bar w3-padding-large w3-padding-24">
+        <input type="submit" th:value="#{lesson.listButton}" class="w3-btn w3-hover-green w3-round-large" th:href="@{/list}"onclick="location.href='/list'"/>
+        <input type="submit" th:value="#{lesson.addButton}" class="w3-btn w3-hover-green w3-round-large" th:href="@{/add}" onclick="location.href='/add'"/>
+        <input type="submit" th:value="#{lesson.deleteButton}" class="w3-btn w3-hover-green w3-round-large" th:href="@{/delete}" onclick="location.href='/delete'"/>
+    </div>
+</div>
+
+</body>
+
+</html>
